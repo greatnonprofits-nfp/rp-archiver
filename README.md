@@ -1,4 +1,4 @@
-# RapidPro Archiver [![Build Status](https://travis-ci.org/nyaruka/rp-archiver.svg?branch=master)](https://travis-ci.org/nyaruka/rp-archiver) [![codecov](https://codecov.io/gh/nyaruka/rp-archiver/branch/master/graph/badge.svg)](https://codecov.io/gh/nyaruka/rp-archiver) [![Go Report Card](https://goreportcard.com/badge/github.com/nyaruka/rp-archiver)](https://goreportcard.com/report/github.com/nyaruka/rp-archiver)
+# RapidPro Archiver [![Build Status](https://github.com/nyaruka/rp-archiver/workflows/CI/badge.svg)](https://github.com/nyaruka/rp-archiver/actions?query=workflow%3ACI) [![codecov](https://codecov.io/gh/nyaruka/rp-archiver/branch/master/graph/badge.svg)](https://codecov.io/gh/nyaruka/rp-archiver) [![Go Report Card](https://goreportcard.com/badge/github.com/nyaruka/rp-archiver)](https://goreportcard.com/report/github.com/nyaruka/rp-archiver)
 
 RP-Archiver is the [RapidPro](https://github.com/rapidpro/rapidpro) component responsible for the archiving of
 old runs and messages. It interacts directly with the RapidPro database and writes archive files to an 
@@ -96,6 +96,8 @@ Usage of archiver:
     	whether we should keep local archive files after upload (default false)
   -log-level string
     	the log level, one of error, warn, info, debug (default "info")
+  -retention-period int
+    	the number of days to keep before archiving (default 90)
   -s3-bucket string
     	the S3 bucket we will write archives to (default "dl-archiver-test")
   -s3-disable-ssl
@@ -122,6 +124,7 @@ Environment variables:
                              ARCHIVER_DELETE - bool
                          ARCHIVER_KEEP_FILES - bool
                           ARCHIVER_LOG_LEVEL - string
+                   ARCHIVER_RETENTION_PERIOD - int
                           ARCHIVER_S3_BUCKET - string
                      ARCHIVER_S3_DISABLE_SSL - bool
                         ARCHIVER_S3_ENDPOINT - string

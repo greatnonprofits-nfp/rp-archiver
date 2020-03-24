@@ -21,6 +21,7 @@ type Config struct {
 
 	ArchiveMessages bool `help:"whether we should archive messages"`
 	ArchiveRuns     bool `help:"whether we should archive runs"`
+	RetentionPeriod int  `help:"the number of days to keep before archiving"`
 	Delete          bool `help:"whether to delete messages and runs from the db after archival (default false)"`
 }
 
@@ -45,6 +46,7 @@ func NewConfig() *Config {
 
 		ArchiveMessages: true,
 		ArchiveRuns:     true,
+		RetentionPeriod: 90,
 		Delete:          false,
 	}
 
