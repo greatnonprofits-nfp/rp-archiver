@@ -1,10 +1,10 @@
-FROM golang:1.13
+FROM golang:1.13-alpine
 
 WORKDIR /app
 
 RUN apk update \
   && apk add --virtual build-deps gcc git \
-  && rm -rf /var/cache/apk/*
+  && rm -rf /var/cache/apt/*
 
 RUN addgroup -S ccl_archiver \
   && adduser -S -G ccl_archiver ccl_archiver
